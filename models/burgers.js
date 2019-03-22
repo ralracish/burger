@@ -1,6 +1,6 @@
 const orm = require("../config/orm.js");
 
-const burger = {
+const burgers = {
 all: function(cb) {
     orm.all("burgers", function(res) {
     cb(res);
@@ -21,5 +21,5 @@ update: function(objColVals, condition, cb) {
 };
 
 // Export the database functions for the controller (catsController.js).
-module.exports = burger;
+module.exports = burgers;
       
