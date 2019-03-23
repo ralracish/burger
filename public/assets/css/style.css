@@ -18,6 +18,10 @@ li {
     margin: 5px;
     background: #faebd7;
 }
+img {
+    height:150px;
+    width:175px;
+}
 
 .label {
     font-weight: bold;

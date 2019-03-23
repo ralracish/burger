@@ -16,7 +16,7 @@ $(function() {
         });
     });
 
-    $(".add-burger").on("click", function(event) {
+    $(".add-burger").on("submit", function(event) {
         event.preventDefault();
 
         const newBurger = {
@@ -32,17 +32,5 @@ $(function() {
             location.reload();
         });
     })
-
-    $(".delete-burger").on("click", function(event) {
-    
-        const id = $(this).data("id");
-
-        $.ajax("/api/burgers/" + id, {
-            type: "DELETE"
-        }).then(() => {
-            console.log("deleted burger", id);
-            location.reload();
-        });
-    });
 })
 
