@@ -16,25 +16,25 @@ $(function() {
         });
     });
 
-    $(".create-form").on("submit", function(event) {
+    $(".add-burger").on("click", function(event) {
         event.preventDefault();
 
         const newBurger = {
-            burger_name: $("#burg").val().trim(),
-            devoured: $("[burger_name = devoured]:checked").val().trim()
+        burger_name: $("#burg").val().trim(),
+        devoured: $("[burger_name = devoured]:checked").val().trim()
         }
-    
-    $.ajax("/api/burgers", {
-        type: "POST",
-        data: newBurger
-    }).then(() => {
-        console.log("created new burger")
-        location.reload();
-    });
 
-    });
+        $.ajax("/api/burgers", {
+            type: "POST",
+            data: newBurger
+        }).then(() => {
+            console.log("created new burger")
+            location.reload();
+        });
+    })
 
     $(".delete-burger").on("click", function(event) {
+    
         const id = $(this).data("id");
 
         $.ajax("/api/burgers/" + id, {
@@ -44,4 +44,5 @@ $(function() {
             location.reload();
         });
     });
-});
+})
+
