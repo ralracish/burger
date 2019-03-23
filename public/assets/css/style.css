@@ -1,7 +1,14 @@
 body {
     background-color:gold;
+    margin:20px 250px 20px 250px;
 }
 
+.add {
+    text-align: center;
+}
+.title {
+    text-align: center;
+}
 img {
     align-content: center;
 }

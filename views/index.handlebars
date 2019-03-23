@@ -1,33 +1,31 @@
-<container class="container">
+      <div class="title">
+        <h1>Burgers at Your Service!</h1>
+        <img src="../public/assets/img/burger2.jpg" alt="burger">
+      </div>
 
-  <div class="title">
-    <h1>Burgers at Your Service!</h1>
-    <img src="../public/assets/img/burger2.jpg" alt="burger">
-  </div>
+      <div class="eaten">
+        <h2>Burgers that are ready to be eaten!</h2>
 
-  <div class="eaten">
-    <h2>Burgers that are ready to be eaten!</h2>
-
-      <ol>
-        {{#each burgers}}
-          {{#unless devoured}}
-            {{>burgers/burger-block devoured=true}}
-          {{/unless}}
-        {{/each}}
-      </ol>
-    </div>
-
-  <div class="devoured">
-    <h2>Burgers that are devoured!</h2>
-
-      <ol>
-          {{#each burgers}}
-            {{#if devoured}}
-              {{> burgers/burger-block devoured=false}}
-            {{/if}}
-          {{/each}}
-      </ol>
-  </div>
+          <ol>
+            {{#each burgers}}
+              {{#unless devoured}}
+                {{>burgers/burger-block devoured=true}}
+              {{/unless}}
+            {{/each}}
+          </ol>
+       </div>
+      <div class="devoured">
+        <h2>Burgers that are devoured!</h2>
+          <ol>
+              {{#each burgers}}
+                {{#if devoured}}
+                  {{> burgers/burger-block devoured=false}}
+                {{/if}}
+              {{/each}}
+          </ol>
+      </div>
+  
+  
   <div class="add">
     <h2>Add a Burger!</h2>
 
