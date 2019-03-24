@@ -1,28 +1,30 @@
 $(function() {
     $(".change-eaten").on("click", function(event) {
+        event.preventDefault();
         const id = $(this).data("id");
-        const newEaten = $(this).data("newEaten");
 
         const newEatenState = {
-            devoured: newEaten
+            devoured: true, burger_id:id
         };
+        console.log(newEatenState)
 
-        $.ajax("api/burgers/" + id, {
+        $.ajax("/api/burgers", {
             type: "PUT",
             data: newEatenState
         }).then(() => {
-            console.log("changed eaten state to", newEaten);
+            console.log("changed eaten state to", true);
             location.reload();
         });
     });
 
-    $(".add-burger").on("submit", function(event) {
+    $(".add-burger").on("click", function(event) {
         event.preventDefault();
 
         const newBurger = {
         burger_name: $("#burg").val().trim(),
-        devoured: $("[burger_name = devoured]:checked").val().trim()
+        devoured: false
         }
+        console.log(newBurger)
 
         $.ajax("/api/burgers", {
             type: "POST",
